@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctgieerkc0j33"]
+
+[ext_resource type="PackedScene" uid="uid://cvaxexodl6oll" path="res://scenes/large_button.tscn" id="1_6o807"]
+[ext_resource type="Texture2D" uid="uid://bn6k3bjuabi2d" path="res://assets/hand down.png" id="2_teblr"]
+
+[node name="SlapButton" type="Node2D"]
+
+[node name="LargeButton" parent="." instance=ExtResource("1_6o807")]
+
+[node name="FingerPoint2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(5, -21)
+rotation = 1.95128
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_teblr")
+flip_h = true
+flip_v = true

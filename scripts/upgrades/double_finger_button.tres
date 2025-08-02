@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=2 format=3 uid="uid://c0tb4skx2rqdm"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_esqe0"]
+
+[resource]
+script = ExtResource("1_esqe0")
+name = "2x BIG BUTTON"
+flavor_text = "WTF 2 Buttons?!"
+cost = 200.0
+amount_owned = 0
+base_production = 1.0
+cost_multiplier = 2.0
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

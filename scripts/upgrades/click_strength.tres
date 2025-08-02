@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=3 format=3 uid="uid://d1hg0cxfcg3tc"]
+
+[ext_resource type="PackedScene" uid="uid://bqvwujtbhjtr6" path="res://scenes/main_counter_button.tscn" id="1_er0km"]
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_u6j7t"]
+
+[resource]
+script = ExtResource("1_u6j7t")
+name = "Click Strength"
+flavor_text = "Click get stronk"
+cost = 9.0
+amount_owned = 1
+base_production = 1.0
+cost_multiplier = 2.0
+scene = ExtResource("1_er0km")
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

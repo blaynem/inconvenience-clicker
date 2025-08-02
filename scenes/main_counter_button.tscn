@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqvwujtbhjtr6"]
+
+[ext_resource type="Script" uid="uid://bhv4v652ueu8c" path="res://scripts/main_counter_button.gd" id="1_y8oa2"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_nnsk1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwgxs"]
+texture = SubResource("ImageTexture_nnsk1")
+
+[node name="MainCounterButton" type="Button"]
+custom_minimum_size = Vector2(100, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -15.5
+offset_right = 40.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rwgxs")
+text = "Press Me"
+script = ExtResource("1_y8oa2")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

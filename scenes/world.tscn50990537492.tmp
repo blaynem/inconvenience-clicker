@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdvhxfrevlhd"]
+
+[ext_resource type="PackedScene" uid="uid://csy4tuyr3ewj7" path="res://scenes/upgrade_button.tscn" id="1_71j4m"]
+[ext_resource type="PackedScene" uid="uid://di3tahix3hnkp" path="res://scenes/cursor.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d1ips7kkkffy8" path="res://scenes/single-finger-button.tscn" id="3_k0juu"]
+[ext_resource type="Script" uid="uid://bmb75hfkqg3ed" path="res://scripts/upgrades/upgrade_manager.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://c3tu1ee78tddv" path="res://scenes/score_manager.gd" id="5_71j4m"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_nnsk1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rwgxs"]
+texture = SubResource("ImageTexture_nnsk1")
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left Panel" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Left Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score Label" type="Label" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CounterButton" type="Button" parent="HBoxContainer/Left Panel/VBoxContainer/Control"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -15.5
+offset_right = 40.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rwgxs")
+text = "Press Me"
+
+[node name="Right Panel" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Right Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade Label" type="Label" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="HBoxContainer/Right Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Upgrade1" parent="HBoxContainer/Right Panel/VBoxContainer/ScrollContainer/UpgradeContainer" instance=ExtResource("1_71j4m")]
+layout_mode = 2
+
+[node name="Upgrade2" parent="HBoxContainer/Right Panel/VBoxContainer/ScrollContainer/UpgradeContainer" instance=ExtResource("1_71j4m")]
+layout_mode = 2
+
+[node name="Cursor" parent="." instance=ExtResource("3_4wyf3")]
+
+[node name="SingleFingerButton" parent="." instance=ExtResource("3_k0juu")]
+position = Vector2(119, 558)
+
+[node name="UpgradeManager" type="Node" parent="." node_paths=PackedStringArray("upgrade_container", "score_manager")]
+script = ExtResource("4_k0juu")
+upgrade_container = NodePath("../HBoxContainer/Right Panel/VBoxContainer/ScrollContainer/UpgradeContainer")
+score_manager = NodePath("../ScoreManager")
+
+[node name="ScoreManager" type="Node" parent="." node_paths=PackedStringArray("counter_button", "score_label")]
+script = ExtResource("5_71j4m")
+counter_button = NodePath("../HBoxContainer/Left Panel/VBoxContainer/Control/CounterButton")
+score_label = NodePath("../HBoxContainer/Left Panel/VBoxContainer/Score Label")

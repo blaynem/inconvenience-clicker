@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=3 format=3 uid="uid://bscafc60y6r6b"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_dus36"]
+[ext_resource type="PackedScene" uid="uid://ctgieerkc0j33" path="res://scenes/slap-button.tscn" id="2_waunn"]
+
+[resource]
+script = ExtResource("1_dus36")
+name = "ULTIMATE BUTTON"
+flavor_text = "Thats a big button!"
+cost = 400.0
+amount_owned = 0
+base_production = 1.0
+cost_multiplier = 5.0
+scene = ExtResource("2_waunn")
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

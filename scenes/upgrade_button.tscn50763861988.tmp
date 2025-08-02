@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://csy4tuyr3ewj7"]
+
+[ext_resource type="Script" uid="uid://bx1uubma5sbay" path="res://scenes/upgrade_button.gd" id="1_vd32k"]
+
+[node name="UpgradeButton" type="Button"]
+text = "Upgrade1"
+script = ExtResource("1_vd32k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 40.0
+offset_bottom = 54.0
+text = "Wow some flavor text"

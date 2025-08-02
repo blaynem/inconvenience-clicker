@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdvhxfrevlhd"]
+
+[ext_resource type="PackedScene" uid="uid://bqvwujtbhjtr6" path="res://scenes/main_counter_button.tscn" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://di3tahix3hnkp" path="res://scenes/cursor.tscn" id="3_4wyf3"]
+[ext_resource type="Script" uid="uid://bmb75hfkqg3ed" path="res://scripts/upgrades/upgrade_manager.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://c3tu1ee78tddv" path="res://scripts/score_manager.gd" id="5_71j4m"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left Panel" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Left Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score Label" type="Label" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Left Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainCounterButton" parent="HBoxContainer/Left Panel/VBoxContainer/Control" instance=ExtResource("1_k0juu")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+
+[node name="Right Panel" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Right Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade Label" type="Label" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+text = "Upgrades"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Right Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="HBoxContainer/Right Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Cursor" parent="." instance=ExtResource("3_4wyf3")]
+
+[node name="UpgradeManager" type="Node" parent="." node_paths=PackedStringArray("upgrade_container", "score_manager")]
+script = ExtResource("4_k0juu")
+upgrade_container = NodePath("../HBoxContainer/Right Panel/VBoxContainer/ScrollContainer/UpgradeContainer")
+score_manager = NodePath("../ScoreManager")
+
+[node name="ScoreManager" type="Node" parent="." node_paths=PackedStringArray("score_label")]
+script = ExtResource("5_71j4m")
+score_label = NodePath("../HBoxContainer/Left Panel/VBoxContainer/Score Label")
+
+[node name="UpgradesHolder" type="Node2D" parent="."]
+
+[node name="singleFinger" type="Marker2D" parent="UpgradesHolder"]
+position = Vector2(55, 583)
