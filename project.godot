@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Inconvenience Clicker"
-run/main_scene="uid://cdvhxfrevlhd"
+run/main_scene="uid://btgp4tvfo88ah"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

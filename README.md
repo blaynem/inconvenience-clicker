@@ -1,3 +1,8 @@
+# Inconvenience Clicker
+
+A game created in 24 hours for the Game Makers Toolkit Game Jam! 
+Theme of "LOOP"
+
 # Upgrades
 
 - Cursor

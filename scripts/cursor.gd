@@ -44,10 +44,6 @@ func handle_cursed_mouse() -> void:
 		var resistance = -delta.normalized() * resistance_strength
 		DisplayServer.warp_mouse(mouse_pos + resistance)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		mouseCurseIntensity = 0
-
 func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_APPLICATION_FOCUS_IN:
 		game_focused = true
