@@ -1,9 +1,10 @@
-class_name SingleFingerButton
+class_name DoubleFingerButton
 extends Node2D
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var finger_point: Sprite2D = $FingerPoint
 @onready var large_button: LargeButton = $LargeButton
+@onready var large_button_2: LargeButton = $LargeButton2
 @onready var marker_2d: Marker2D = $Marker2D
 
 var _resource: UpgradeStats;
@@ -39,9 +40,10 @@ func _push_finger() -> void:
 	elif large_button.current_step > 0:
 		# Phase 2: press the button
 		large_button.pressStep()
+		large_button_2.pressStep()
 		if large_button.pressed_called:
 			score_added = true;
-			ScoreGainNumber.display_numer(_resource.get_production(), marker_2d.global_position)
+			ScoreGainNumber.display_numer(_resource.get_production(), marker_2d.global_position, Vector2(1.3, 1.3))
 			audio_stream_player.play()
 			SignalBus.AddToScore.emit(_resource)
 	# add 1 to current_steps
@@ -51,6 +53,7 @@ func _lift_finger() -> void:
 	if large_button.current_step < large_button.max_steps:
 		# Phase 2: release the button
 		large_button.releaseStep()
+		large_button_2.releaseStep()
 	elif current_steps > 0:
 		# Phase 1: lift finger away
 		finger_point.position.y -= step_distance

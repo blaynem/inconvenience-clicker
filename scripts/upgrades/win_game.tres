@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=2 format=3 uid="uid://bb8kan18l6tt7"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="2_auxrl"]
+
+[resource]
+script = ExtResource("2_auxrl")
+name = "Secret????"
+flavor_text = "?????????????????"
+cost = 50000.0
+amount_owned = 0
+base_production = 0.0
+cost_multiplier = 1.15
+max_ownable = 1
+multiplier = 0
+unlock_at_score = 25000
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

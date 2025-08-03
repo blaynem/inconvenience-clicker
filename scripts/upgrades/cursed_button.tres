@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=2 format=3 uid="uid://kq7haucjxdw2"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_uu76y"]
+
+[resource]
+script = ExtResource("1_uu76y")
+name = "Improve Button"
+flavor_text = "Let's make it fancy. Another 5 clikers added."
+cost = 1000.0
+amount_owned = 0
+base_production = 0.0
+cost_multiplier = 0.0
+max_ownable = 1
+multiplier = 5
+unlock_at_score = 15000
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

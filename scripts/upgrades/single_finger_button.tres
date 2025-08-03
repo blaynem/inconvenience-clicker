@@ -7,9 +7,12 @@
 script = ExtResource("1_v3lb1")
 name = "BIG BUTTON"
 flavor_text = "Get a Big Button!"
-cost = 10.0
+cost = 20.0
 amount_owned = 0
 base_production = 1.0
-cost_multiplier = 2.0
+cost_multiplier = 1.25
 scene = ExtResource("2_uf6t4")
+max_ownable = 10
+multiplier = 0
+unlock_at_score = 0
 metadata/_custom_type_script = "uid://chy44jxb5v6ur"

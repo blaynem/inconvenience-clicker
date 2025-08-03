@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdvhxfrevlhd"]
+[gd_scene load_steps=6 format=3 uid="uid://cdvhxfrevlhd"]
 
 [ext_resource type="PackedScene" uid="uid://bqvwujtbhjtr6" path="res://scenes/main_counter_button.tscn" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://di3tahix3hnkp" path="res://scenes/cursor.tscn" id="3_4wyf3"]
-[ext_resource type="Script" uid="uid://bmb75hfkqg3ed" path="res://scripts/upgrades/upgrade_manager.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://b4bjryk5rvf30" path="res://scripts/cursor.gd" id="3_71j4m"]
+[ext_resource type="Script" uid="uid://bmb75hfkqg3ed" path="res://scripts/upgrade_manager.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://c3tu1ee78tddv" path="res://scripts/score_manager.gd" id="5_71j4m"]
 
 [node name="UI" type="Control"]
@@ -22,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Left Panel" type="Control" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
@@ -49,10 +51,17 @@ size_flags_vertical = 3
 [node name="MainCounterButton" parent="HBoxContainer/Left Panel/VBoxContainer/Control" instance=ExtResource("1_k0juu")]
 unique_name_in_owner = true
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -50.0
 offset_top = -20.0
 offset_right = 50.0
 offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Right Panel" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -85,8 +94,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Cursor" parent="." instance=ExtResource("3_4wyf3")]
+unique_name_in_owner = true
+script = ExtResource("3_71j4m")
 
 [node name="UpgradeManager" type="Node" parent="." node_paths=PackedStringArray("upgrade_container", "score_manager")]
+unique_name_in_owner = true
 script = ExtResource("4_k0juu")
 upgrade_container = NodePath("../HBoxContainer/Right Panel/VBoxContainer/ScrollContainer/UpgradeContainer")
 score_manager = NodePath("../ScoreManager")
@@ -98,4 +110,16 @@ score_label = NodePath("../HBoxContainer/Left Panel/VBoxContainer/Score Label")
 [node name="UpgradesHolder" type="Node2D" parent="."]
 
 [node name="singleFinger" type="Marker2D" parent="UpgradesHolder"]
-position = Vector2(55, 583)
+position = Vector2(50, 600)
+
+[node name="doubleFinger" type="Marker2D" parent="UpgradesHolder"]
+position = Vector2(134, 565)
+
+[node name="slapButton" type="Marker2D" parent="UpgradesHolder"]
+position = Vector2(258, 580)
+
+[node name="autoClicker" type="Marker2D" parent="UpgradesHolder"]
+position = Vector2(733, 130)
+
+[node name="magicSwitch" type="Marker2D" parent="UpgradesHolder"]
+position = Vector2(247, 230)

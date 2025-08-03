@@ -1,8 +1,8 @@
-class_name SingleFingerButton
+class_name SlapButton
 extends Node2D
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var finger_point: Sprite2D = $FingerPoint
+@onready var finger_point: Sprite2D = $FingerPoint2
 @onready var large_button: LargeButton = $LargeButton
 @onready var marker_2d: Marker2D = $Marker2D
 
@@ -41,8 +41,8 @@ func _push_finger() -> void:
 		large_button.pressStep()
 		if large_button.pressed_called:
 			score_added = true;
-			ScoreGainNumber.display_numer(_resource.get_production(), marker_2d.global_position)
 			audio_stream_player.play()
+			ScoreGainNumber.display_numer(_resource.get_production(), marker_2d.global_position, Vector2(1.5,1.5))
 			SignalBus.AddToScore.emit(_resource)
 	# add 1 to current_steps
 	current_steps += 1

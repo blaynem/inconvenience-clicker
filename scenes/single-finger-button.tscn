@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1ips7kkkffy8"]
+[gd_scene load_steps=5 format=3 uid="uid://d1ips7kkkffy8"]
 
 [ext_resource type="PackedScene" uid="uid://cvaxexodl6oll" path="res://scenes/large_button.tscn" id="1_3afhu"]
 [ext_resource type="Script" uid="uid://bihkhtnnun5k0" path="res://scripts/single_finger_button.gd" id="1_wlcxq"]
+[ext_resource type="AudioStream" uid="uid://untym6ph26xk" path="res://assets/Audio/switch27.ogg" id="3_5pi36"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwgxs"]
 load_path = "res://.godot/imported/finger point.png-dbf02fe045a85e2cff6dc99f3409d001.ctex"
@@ -17,3 +18,9 @@ position = Vector2(16, -57)
 rotation = 1.5708
 texture = SubResource("CompressedTexture2D_rwgxs")
 flip_v = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5pi36")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-33, -36)

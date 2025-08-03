@@ -12,14 +12,18 @@ func _ready() -> void:
 	hint_text_label.visible = false;
 
 func setup_button(res: UpgradeStats) -> void:
-	statsRes = res;
-	hint_text_label.text = res.flavor_text;
-	nameLabel.text = res.name;
-	costLabel.text = str(res.get_next_cost());
+	statsRes = res
+	hint_text_label.text = res.flavor_text
+	
+	var owned_prefix = ""
+	if res.amount_owned > 0:
+		owned_prefix = "(%d) " % res.amount_owned
+	
+	nameLabel.text = "%s%s" % [owned_prefix, res.name]
+	costLabel.text = "Cost: $%.0f" % res.get_next_cost()
 
 func _on_mouse_entered() -> void:
-	if !disabled:
-		hint_text_label.visible = true;
+	hint_text_label.visible = true;
 
 func _on_mouse_exited() -> void:
 	hint_text_label.visible = false;

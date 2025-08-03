@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=2 format=3 uid="uid://bp8ufo53xolwb"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_tnc42"]
+
+[resource]
+script = ExtResource("1_tnc42")
+name = "Revert Experimental Mouse"
+flavor_text = "We did say it was experimental.."
+cost = 2000.0
+amount_owned = 0
+base_production = 0.0
+cost_multiplier = 0.0
+max_ownable = 1
+multiplier = 2
+unlock_at_score = 5200
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

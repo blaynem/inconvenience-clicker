@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxn37mwga0xk"]
+
+[ext_resource type="Script" uid="uid://celiqn4xvakrp" path="res://scripts/magic_off_switch.gd" id="1_6hpd1"]
+[ext_resource type="AudioStream" uid="uid://bbcuugtjusm0f" path="res://assets/Audio/switch37.ogg" id="1_wiesn"]
+[ext_resource type="AudioStream" uid="uid://cihut56guowsq" path="res://assets/Audio/switch36.ogg" id="3_u6k08"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwgxs"]
+load_path = "res://.godot/imported/finger point.png-dbf02fe045a85e2cff6dc99f3409d001.ctex"
+
+[node name="MagicOffSwitch" type="Node2D"]
+script = ExtResource("1_6hpd1")
+
+[node name="FingerPoint" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-50, 15)
+texture = SubResource("CompressedTexture2D_rwgxs")
+
+[node name="OnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_wiesn")
+
+[node name="OffSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u6k08")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]

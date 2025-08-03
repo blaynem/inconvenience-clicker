@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeStats" load_steps=2 format=3 uid="uid://bw2tgucptmp6o"]
+
+[ext_resource type="Script" uid="uid://chy44jxb5v6ur" path="res://scripts/upgrades/upgrades_stats_resource.gd" id="1_ujoo5"]
+
+[resource]
+script = ExtResource("1_ujoo5")
+name = "Click UN-Limiter"
+flavor_text = "Unlimited clicks?! And an extra clicker?!"
+cost = 5000.0
+amount_owned = 0
+base_production = 0.0
+cost_multiplier = 0.0
+max_ownable = 1
+multiplier = 2
+unlock_at_score = 15000
+metadata/_custom_type_script = "uid://chy44jxb5v6ur"

@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://scripts/SignalBus.gd"
+SignalBus="*res://scripts/Globals/SignalBus.gd"
+ScoreGainNumber="*res://scripts/Globals/score_gain_number.gd"
 
 [rendering]
 
