@@ -3,7 +3,7 @@
 A game created in 24 hours for the Game Makers Toolkit Game Jam! 
 Theme of "LOOP"
 
-# Upgrades
+## Future Upgrades
 
 - Cursor
 	- "hold to click"
